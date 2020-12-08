@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base #parent
 
-    has_many :characters
+    has_many :character
 
 
 

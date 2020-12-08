@@ -2,7 +2,7 @@ Hi. It's rwanda. After months of failure I am back to complete this project and 
 
 This app is will have a list of The Office characters, with each season having a different version of the character, and users will be able to save the characters they like to their profile. This is my topic for the app because I really like The Office and feel passionate about the varying quality of seasons.
 
-current commits: create modules and made them a subclassed of ActiveRecord; created rakefile; put in Active Record Associations
+current commits: 
 
 
-#gem install activerecord #gem install rake #gem install sinatra #done
+#gem install activerecord #gem install rake #gem install sinatra #gem install shotgun #done

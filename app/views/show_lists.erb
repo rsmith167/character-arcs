@@ -1,0 +1,33 @@
+<html>
+<body>
+<h1>"Welcome, #{@user}."</h1>
+<h2>Favorite Characters</h2>
+<h3>
+<ul>
+<% @user.fav.each_with_index do |rank,fav|%>
+<li><%="#{rank}: #{fav}"%></li>
+<%end%>
+</ul>
+<h3>
+<h2>Hated Characters</h2>
+<h3>
+<ul>
+<% @user.hate.each_with_index do |rank,hate|%>
+<li><%="#{rank}: #{hate}"%></li>
+<%end%>
+</ul>
+</h3> <br>
+<h2>Would you like to:<h2>
+<br>
+<form method="POST" action= "/:user/:action">
+
+<input id="edit_favorite_list" name="action" type="radio" value="fav" />
+<label for="edit_favorite_list">edit favorite list</label>
+<input id="edit_hated_list" name="action" type="radio" value="hate" />
+<label for="edit_hated_list">edit hated list</label>
+<input id="search_characters" name="action" type="radio" value="search" />
+<label for="search_characters">search characters</label>
+
+</form>
+</body>
+</html>
