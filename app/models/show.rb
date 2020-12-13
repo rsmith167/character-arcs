@@ -1,7 +1,7 @@
 class Show < ActiveRecord::Base #parent
 
-    has_many :character
-    has_many :season, through :character
+    has_many :characters
+    has_many :seasons, through: :characters
 
 
 
