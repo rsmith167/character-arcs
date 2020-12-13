@@ -1,23 +1,19 @@
 source "https://rubygems.org"
 
 #list of all the gems needed to run the application
+gem 'nokogiri'
+gem 'open-uri'
+
 gem 'sinatra'
+gem 'activerecord', '5.2.0', :require => 'active_record'
+gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem 'rake'
 gem 'require_all'
-gem 'activerecord', :require => 'active_record'
-#gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
+gem 'sqlite3','~> 1.3.6'
+gem 'thin'
+gem 'pry'
+gem 'shotgun'
+gem 'tux'
 
-gem 'sinatra-activerecord'
-
-#gem nokogiri
-#gem open-uri
-
-  #group :development do
-    gem 'shotgun'
-    gem 'pry'
-    #gem 'tux'
-    gem 'sqlite3'#, '~> 1.3.6'
-  #end
 
 #bundle install
-    #installs gems and creates Gemfile.lock

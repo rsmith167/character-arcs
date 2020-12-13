@@ -1,17 +1,23 @@
+require './config/environment'
+
 class Application < Sinatra::Base
-    get '/' do       
-        #erb :index   
-        "Hello, world!"    
+    configure do
+        set :views, 'app/views'
     end
-    # post '/:user' do
-    #     @user = params[:user]
-    #     if !User.all.include(user)
-    #             User.new(user)
-    #         redirect '/:user' 
-    #     else  
-    #         redirect '/:user'  
-    #     end
-    # end
+    get '/' do       
+        erb :index   
+        #"Hello, world!"    
+    end
+    post '/"user' do
+        @user = params[:user]
+        @user
+        # if !User.all.include(user)
+        #         User.new(user)
+        #     redirect '/:user' 
+        # else  
+        #     redirect '/:user'  
+        # end
+    end
     # get '/:user'    
     #     erb :shows_lists
     # end
