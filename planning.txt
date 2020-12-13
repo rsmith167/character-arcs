@@ -14,16 +14,5 @@ Validate uniqueness of user login attribute (username or email).
 Validate user input so bad data cannot be persisted to the database.
 
 gem install pry #exit
-
-migration files names (steps)
-01_create_characters.rb
-    create table with character name
-02_add_character_info_actor_name.rb
-    add a column with the actors name
-03_add_character_info_season_appear.rb
-    add nine column, boolean, indicating if they appeared in that season
-04_create_users.rb
-    create a table for users, one column for name
-05_add_user_preferences.rb
-    add a column for favorite characters, hate characters
+irb
 
