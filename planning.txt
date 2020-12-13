@@ -6,3 +6,11 @@ current commits:
 
 
 #gem install activerecord #gem install rake #gem install sinatra #gem install shotgun #done
+
+
+TODO!!!
+Must have user accounts - users must be able to sign up, sign in, and sign out. - add password
+Validate uniqueness of user login attribute (username or email).
+Validate user input so bad data cannot be persisted to the database.
+
+gem install pry #exit

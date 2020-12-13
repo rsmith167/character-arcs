@@ -1,4 +1,4 @@
+require './config/environment'
 
-require 'sinatra'
-require_relative './app.rb'
-run Application
+
+run Application #class name in app.rb
