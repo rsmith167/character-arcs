@@ -1,56 +1,39 @@
+#rackup app/controllers/app.rb #to start app
 require './config/environment'
 
-class Application < Sinatra::Base
+class App < Sinatra::Base
     configure do
         set :views, 'app/views'
     end
-    get '/' do       
-        erb :index   
-        #"Hello, world!"    
+    get '/' do 
+        erb :index          
     end
-    post '/"user' do
-        @user = params[:user]
-        @user
-        # if !User.all.include(user)
-        #         User.new(user)
-        #     redirect '/:user' 
-        # else  
-        #     redirect '/:user'  
-        # end
-    end
-    # get '/:user'    
-    #     erb :shows_lists
-    # end
-    # post '/:user/:action'
-    #     @action = params[:action]
-    #     if action == "fav"
-    #         redirect '/:user/edit_fav_list'
-    #     elsif action == "hate"
-    #         redirect '/:user/edit_hate_list'
-    #     else
-    #         redirect '/:user/search'
-    #    end
-    # end
-    # get '/:user/edit_fav_list'
-    #     erb :edit_fav_list
-    # end
-    # get '/:user/edit_hate_list'
-    #     erb :edit_hate_list
-    # end
-    # post '/:user/:choice'
-    #     @rank = params[:rank]
-    #     @choice = params[:choice]
+    post "/user" do
+        # if User.find_by(username: params[:user])
+        #     redirect to ("/#{params[:user]}")
+        # else
+        #     "you don't have an account"    
+        # end   
+        #@user = User.create(:username => "#{params[:user]}") 
+        #erb :create_session
+        #redirect to ("/#{@user}") 
+        @user = User.find_by(username: params.keys[0])
+        @user[User.column_names[params.values[0].to_i+2]] = params[:favchar]
         
-    #     if !Character.all.include(choice)
-    #         if !choice = NULL
-    #            Character.list(choice[0])                
-    #         else
-    #             Character.list
-    #         end
-    #     else   
-    #         user.fav[:rank-1] = choice
-    #     end
-    # end
+        @user.save 
+        erb :show_lists
+    end 
+    get "/user" do  
+        if !User.find_by(username: params[:user])
+            @user = User.create(:username => "#{params[:user]}")
+            @user.save
+            "#{@user.username}, please refresh the page"
+        else
+            @user = User.find_by(username: params[:user])
+            erb :show_lists
+        end
+    end
+end
 
     # get '/:user/search'
     #     erb :search
@@ -58,5 +41,3 @@ class Application < Sinatra::Base
     # get '/:user/episodes'
     #     erb :episodes
     # end
-
-end

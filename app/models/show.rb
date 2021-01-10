@@ -1,8 +1,4 @@
-class Show < ActiveRecord::Base #parent
-
+class Show < ActiveRecord::Base
     has_many :characters
-    has_many :seasons, through: :characters
-
-
-
+   #has_many :seasons, through: :characters
 end

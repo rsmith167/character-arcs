@@ -1,6 +1,5 @@
 source "https://rubygems.org"
 
-#list of all the gems needed to run the application
 gem 'nokogiri'
 gem 'open-uri'
 
@@ -14,6 +13,4 @@ gem 'thin'
 gem 'pry'
 gem 'shotgun'
 gem 'tux'
-
-
-#bundle install
+gem 'bcrypt'

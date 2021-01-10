@@ -1,7 +1,4 @@
-class User < ActiveRecord::Base #parent
-    #needs a password
+class User < ActiveRecord::Base
+    #has_secure_password
     has_many :characters
-
-
-
 end

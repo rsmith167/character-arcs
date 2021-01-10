@@ -1,31 +1,39 @@
 <html>
-<body>
-<h1>"Welcome, #{@user}."</h1>
-<h2>Favorite Characters</h2>
-<h3>
-<ul>
-<% @user.fav.each_with_index do |rank,fav|%>
-<li><%="#{rank}: #{fav}"%></li>
-<%end%>
-</ul>
-<h3>
-<h2>Hated Characters</h2>
-<h3>
-<ul>
-<% @user.hate.each_with_index do |rank,hate|%>
-<li><%="#{rank}: #{hate}"%></li>
-<%end%>
-</ul>
-</h3> <br>
-<h2>Would you like to:<h2>
-<br>
-<form method="POST" action= "/:user/:action">
-<input id="edit_favorite_list" name="action" type="radio" value="fav" />
-<label for="edit_favorite_list">edit favorite list</label>
-<input id="edit_hated_list" name="action" type="radio" value="hate" />
-<label for="edit_hated_list">edit hated list</label>
-<input id="search_characters" name="action" type="radio" value="search" />
-<label for="search_characters">search characters</label>
-</form>
-</body>
+    <body>
+    <h1>Welcome, <%=@user.username%></h1>
+    <h2>Favorite Characters</h2>
+        <ol>
+        <li><%=@user.fav_list_0%> </li>
+        <li><%=@user.fav_list_1%> </li>
+        <li><%=@user.fav_list_2%> </li>
+        <li><%=@user.fav_list_3%> </li>
+        <li><%=@user.fav_list_4%> </li>        
+        </ol>    
+        <form method="POST" action= "/user">
+            <label for="favid">Please enter a rank:</label>
+            <%name = ""%>
+            <%name =@user.username%>
+            <input type="text" id="favid" name= "<%=name%>" ><br>
+            <label for="favid">Please enter a characters name, then hit submit:</label>
+            <input type="text" id="favchar" name="favchar">      
+        <input type="submit" value="Submit">    
+
+        <h2>Hated Characters</h2>
+        <ol>
+        <li><%=@user.hate_list_0%> </li>
+        <li><%=@user.hate_list_1%> </li>
+        <li><%=@user.hate_list_2%> </li>
+        <li><%=@user.hate_list_3%> </li>
+        <li><%=@user.hate_list_4%> </li>        
+        </ol>    
+        <form method="POST" action= "/user">
+            <label for="hateid">Please enter a rank:</label>
+            <%name = ""%>
+            <%name =@user.username%>
+            <input type="text" id="hateid" name= "<%=name%>" ><br>
+            <label for="hateid">Please enter a characters name, then hit submit:</label>
+            <input type="text" id="hatechar" name="hatechar">      
+        <input type="submit" value="Submit">    
+
+    </body>
 </html>

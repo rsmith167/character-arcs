@@ -1,4 +1,4 @@
 require './config/environment'
 
 
-run Application #class name in app.rb
+run App #class name in app.rb
